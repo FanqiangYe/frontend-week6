@@ -9,6 +9,9 @@ const scores = [
     {name: 'Rianne', score: 66, grade: null}
 ];
 
+for (let i = 0 ; i < scores.length ; i++){
+    console.log(scores[i].score)}
+
 // Verwachtte uitkomsten:
 // 83
 // 77
@@ -17,14 +20,27 @@ const scores = [
 // ==========================================
 
 
-
-
-
 // ==========================================
 // Opdracht 1b
 // Breid je script uit door voor iedere student de score om te rekenen naar een letter en dit in de terminal te printen
 // < 60 = F, < 70 = D, <80 = C, <90 B, <100 = A
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 getallen zou bevatten!
+
+ for (let i = 0 ; i < scores.length ; i++) {
+        if (scores[i].score < 60) {
+            console.log("F")
+        } else if (scores[i].score < 70) {
+            console.log("D")
+        } else if (scores[i].score < 80) {
+            console.log("C")
+        } else if (scores[i].score < 90) {
+            console.log("B")
+        } else {
+            console.log("A")
+        }
+    }
+
+
 // Verwachtte uitkomsten:
 // B
 // C
@@ -33,13 +49,30 @@ const scores = [
 // ==========================================
 
 
-
-
-
 // ==========================================
 // Opdracht 1c
 // Breid je script uit door de bijbehorende letter op te slaan in de 'grade'-property van ieder student-object in de array.
 // Vóór het script zie je de originele objecten,
+
+console.log(scores);
+for (let i = 0 ; i < scores.length ; i++){
+    if (scores[i].score < 60){
+        scores[i].grade = "F"
+    }
+    else if (scores[i].score < 70){
+        scores[i].grade = "D"
+    }
+    else if (scores[i].score < 80){
+        scores[i].grade = "C"
+    }
+    else if (scores[i].score < 90){
+        scores[i].grade = "B"
+    }
+    else {
+        scores[i].grade = "A"}
+    console.log(scores[i])
+}
+
 // Na jouw script zie je de aangepaste objecten:
 // console.log(scores) geeft: [
 //  { name: 'Max', score: 83, grade: 'B' },
@@ -64,6 +97,14 @@ const NOVIEmployees = [
     {firstName: 'Mark', lastName: 'Rensen'},
 ];
 
+for (let i= 0; i < NOVIEmployees.length; i++) {
+    const email = NOVIEmployees[i].firstName + '.' + NOVIEmployees[i].lastName + '@novi.nl';
+    NOVIEmployees[i].email = email.toLowerCase();
+}
+
+console.log(NOVIEmployees)
+
+
 // Bij NOVI horen de e-mailadressen altijd in het volgende format: voornaam.achternaam@novi.nl
 // Vóór het script zie je de originele objecten,
 // Na jouw script zie je de aangepaste objecten:
@@ -74,10 +115,6 @@ const NOVIEmployees = [
 //   { firstName: 'Mark', lastName: 'Rensen', email: 'Mark.Rensen@novi.nl' },
 //  ];
 // ==========================================
-
-
-
-
 
 
 // Opdracht 2-BONUS
@@ -113,6 +150,34 @@ const students = [
     {name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: null},
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
+
+for (let i = 0 ; i <students.length ; i++) {
+    switch (students[i].zipCode) {
+        case '3513':
+            students[i].neighborhood = "Pijlsweerd";
+            break;
+        case '3514':
+            students[i].neighborhood = "Vogelenbuurt";
+            break;
+        case '3512':
+            students[i].neighborhood = "Binnenstad";
+            break;
+        case '3531':
+            students[i].neighborhood = "Lombok";
+            break;
+        case '3572':
+            students[i].neighborhood = "Wittevrouwen";
+            break;
+        case '3581':
+            students[i].neighborhood = "Oudwijk";
+            break;
+        case '3583':
+            students[i].neighborhood = "Schildersbuurt";
+            break;
+    }
+}
+
+console.log(students)
 
 // Verwachte uitkomsten:
 // [
